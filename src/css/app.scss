@@ -54,6 +54,7 @@ nav {
       a {
         text-decoration: none;
         color: currentColor;
+        text-transform: uppercase;
       }
     }
   }
@@ -71,7 +72,7 @@ main {
 section.content {
   grid-col: 1 / span 1;
   grid-row: 1 / span 1;
-  height: 100%;
+  height: calc(100% - 2rem);
   border: 0.2rem solid $bgColorBlue;
   padding: 1rem;
 
@@ -99,5 +100,11 @@ footer {
   background-color: $bgColorBlue;
   color: $textColorWhite;
   height: 1.7rem;
-  text-align: center;
+  padding-left: 4rem;
+  text-align: left;
+
+  span {
+    display: inline-block;
+    margin-right: 3rem;
+  }
 }

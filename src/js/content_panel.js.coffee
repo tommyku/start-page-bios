@@ -1,26 +1,17 @@
 $ = require 'cash-dom'
+Pages = require './pages.js.coffee'
 
 class ContentPanel
-  PAGES: ['main', 'learn', 'work', 'fun']
-
   constructor: ->
-    @hash = @detectCurrentPage()
-
-  detectCurrentPage: ->
-    if window.location.hash
-      hash = window.location.hash.substring(1)
-      if @PAGES.indexOf(hash) != -1
-        return hash
-    hash = window.location.hash = @PAGES[0]
-    return hash
+    @hash = Pages.detectCurrentPage()
 
   updatePage: ->
-    $(".#{@PAGES.join(', .')}").removeClass('focus')
+    $(".#{Pages.PAGES.join(', .')}").removeClass('focus')
     $(".#{@hash}").addClass('focus')
 
   setUpHashListener: ->
     $(window).on 'hashchange', =>
-      @hash = @detectCurrentPage()
+      @hash = Pages.detectCurrentPage()
       @updatePage()
 
   bootstrap: ->

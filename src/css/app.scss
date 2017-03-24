@@ -10,7 +10,7 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: monospace;
-  font-size: larger;
+  font-size: 35px;
   line-height: 1.7rem;
   font-weight: 300;
   background-size: cover;
@@ -21,6 +21,10 @@ html, body {
   height: 100vh;
   display: grid;
   grid-template-rows: 1fr 1fr 100fr 1fr;
+}
+
+*:focus {
+  outline: 0;
 }
 
 header {
@@ -49,6 +53,7 @@ nav {
       &.focus {
         background-color: $bgColorLightGray;
         color: $textColorBlue;
+        border-bottom: 1px solid $bgColorLightGray;
       }
 
       a {
@@ -81,18 +86,27 @@ section.content {
     &:target {
       display: block;
     }
+    padding-left: 2rem;
   }
 
-  section.main {
+  a {
+    display: block;
+    text-decoration: none;
+    color: $textColorBlue;
+
+    &.focus {
+      color: $textColorWhite;
+    }
   }
 }
 
-section.description{
+section.description {
   grid-col: 2 / span 1;
   grid-row: 1 / span 1;
-  height: 100%;
+  height: calc(100% - 2rem);
   border: 0.2rem solid $bgColorBlue;
   border-left: none;
+  padding: 1rem;
 }
 
 footer {

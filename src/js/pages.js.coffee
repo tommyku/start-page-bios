@@ -1,5 +1,5 @@
 class Pages
-  @PAGES: ['main', 'work', 'fun', 'learn']
+  @PAGES: ['main', 'work', 'fun']
 
   @detectCurrentPage: ->
     if window.location.hash

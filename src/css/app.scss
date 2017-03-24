@@ -1,0 +1,103 @@
+// mimicking American MegaTrends color scheme
+$bgColorBlue: #0000AA;
+$bgColorLightGray: #AAAAAA;
+$textColorBlue: $bgColorBlue;
+$textColorLightGray: $bgColorLightGray;
+$textColorDarkGray: #555555;
+$textColorWhite: #FFFFFF;
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: monospace;
+  font-size: larger;
+  line-height: 1.7rem;
+  font-weight: 300;
+  background-size: cover;
+  background-position: center center;
+}
+
+.grid-container {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr 1fr 100fr 1fr;
+}
+
+header {
+  background-color: $bgColorBlue;
+  color: $textColorWhite;
+  height: 1.7rem;
+  text-align: center;
+  grid-row: 1 / span 1;
+}
+
+nav {
+  grid-row: 2 / span 1;
+  height: 1.7rem;
+  padding: 0 4rem;
+  background-color: $bgColorBlue;
+  color: $textColorWhite;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    li {
+      display: inline-block;
+      list-style: none;
+      margin-right: 1.5rem;
+
+      &.focus {
+        background-color: $bgColorLightGray;
+        color: $textColorBlue;
+      }
+
+      a {
+        text-decoration: none;
+        color: currentColor;
+      }
+    }
+  }
+}
+
+main {
+  grid-row: 3 / span 1;
+  background-color: $bgColorLightGray;
+  grid-template-columns: 70% 30%;
+  grid-template-rows: 100%;
+  padding: 1rem;
+  display: grid;
+}
+
+section.content {
+  grid-col: 1 / span 1;
+  grid-row: 1 / span 1;
+  height: 100%;
+  border: 0.2rem solid $bgColorBlue;
+  padding: 1rem;
+
+  section {
+    display: none;
+    &:target {
+      display: block;
+    }
+  }
+
+  section.main {
+  }
+}
+
+section.description{
+  grid-col: 2 / span 1;
+  grid-row: 1 / span 1;
+  height: 100%;
+  border: 0.2rem solid $bgColorBlue;
+  border-left: none;
+}
+
+footer {
+  grid-row: 4 / span 1;
+  background-color: $bgColorBlue;
+  color: $textColorWhite;
+  height: 1.7rem;
+  text-align: center;
+}

@@ -1,0 +1,38 @@
+html
+  head
+    style.
+      .mask {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: white;
+        z-index: 10000;
+        opacity: 1;
+        transition: opacity 0.2s linear;
+        will-change: opacity;
+      }
+    script(type='text/javascript' src='bundle.js' async)
+  body
+    .grid-container
+      header Hey how's your day Tommy?
+      nav
+        ul
+          li.main
+            a(href='#main') Main
+          li.work
+            a(href='#work') Work
+          li.fun
+            a(href='#fun') Fun
+          li.learn
+            a(href='#learn') Learn
+      main
+        section.content
+          section#main Main
+          section#work Work
+          section#fun Fun
+          section#learn Learn
+        section.description
+          | yi
+      footer Copyright&copy; 2017 nobody really

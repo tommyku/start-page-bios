@@ -1,19 +1,7 @@
 Page = require '../../page.js.coffee'
 
 class MainPage extends Page
+  COLLECTION: ['date_item', 'time_item', 'stock_item']
   NAME: 'main'
-
-  URLS: [
-    ['a', 'b']
-    ['a', 'b']
-    ['a', 'b']
-    ['a', 'b']
-    ['a', 'b']
-  ]
-
-  constructor: ->
-    # Item-based method is too expensive, use this instead
-    @collection = @URLS.map (item)=>
-      {html: ()-> "<a href='#{item[0]}'>#{item[1]}</a>"}
 
 module.exports = MainPage

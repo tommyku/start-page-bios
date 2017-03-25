@@ -1,6 +1,7 @@
 $ = require 'cash-dom'
 Pages = require './pages.js.coffee'
 
+# would've been much easier if we had React
 class Navigation
   constructor: ->
     @pageCount = Pages.PAGES.length
@@ -36,8 +37,8 @@ class Navigation
     if $currentFocus[0]?
       $prevFocus = $($currentFocus[0]).prev()
     else
-      $prevFocus = $($contentSection.children()[0])
-    if $prevFocus.length != 0
+      $prevFocus = $($contentSection.children('.nav')[0])
+    if $prevFocus.length != 0 && $prevFocus.hasClass('nav')
       $contentSection.children('.focus').removeClass('focus')
       $prevFocus.addClass('focus')
       $prevFocus.get(0).focus()
@@ -49,8 +50,8 @@ class Navigation
     if $currentFocus[0]?
       $nextFocus = $($currentFocus[0]).next()
     else
-      $nextFocus = $($contentSection.children()[0])
-    if $nextFocus.length != 0
+      $nextFocus = $($contentSection.children('.nav')[0])
+    if $nextFocus.length != 0 && $nextFocus.hasClass('nav')
       $contentSection.children('.focus').removeClass('focus')
       $nextFocus.addClass('focus')
       $nextFocus.get(0).focus()

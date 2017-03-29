@@ -1,0 +1,11 @@
+{
+  "name": "Start page BIOS",
+  "description": "New tab replacer that looks like a BIOS screen",
+  "version": "0.1",
+  "incognito": "split",
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "manifest_version": 2
+}

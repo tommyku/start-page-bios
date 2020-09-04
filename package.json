@@ -16,7 +16,7 @@
     "gulp": "^3.9.1",
     "gulp-pug": "^3.2.0",
     "live-server": "^1.1.0",
-    "node-sass": "^4.1.1",
+    "node-sass": "^4.13.1",
     "postcss-loader": "^1.2.1",
     "pug": "^2.0.0-beta6",
     "sass-loader": "^4.1.1",
